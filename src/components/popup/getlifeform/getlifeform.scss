@@ -1,0 +1,12 @@
+﻿@import "../../../assets/scss/_variables.scss";
+
+.form-getlife {
+  background: $light;
+  box-shadow: 8px 8px 16px $primary-dark;
+  border-radius: 8px;
+  padding: 20px 15px;
+
+  @media (max-width: 600px) {
+    margin-bottom: 20px;
+  }
+}

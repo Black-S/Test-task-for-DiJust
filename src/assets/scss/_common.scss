@@ -1,0 +1,268 @@
+@import "variables";
+
+/* TYPOGRAPHY
+--------------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,300,400,600);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: $black;
+  font-weight: normal;
+}
+
+:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* BUTTONS
+-------------------------------------------------------------------------------------------- */
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &.btn-close {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: rgba(0,0,0,0.3);
+    }
+  }
+
+  &.btn-primary {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 31px;
+    text-align: center;
+    color: $white;
+    background: linear-gradient(332.91deg, #3752A6 13.38%, #C765F5 86.62%);
+    box-shadow: 5px 5px 16px $secondary;
+    border-radius: 64px;
+    padding: 5px 20px;
+    min-width: 140px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: linear-gradient(332.91deg, #C765F5 13.38%, #3752A6 86.62%);
+    }
+  }
+}
+
+/* FORM COMPONENTS
+-------------------------------------------------------------------------------------------- */
+.form-wrapp {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: normal;
+  text-align: center;
+  color: $text-color;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+
+  &__label {
+    display: block;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: normal;
+    color: $label-color;
+    text-align: left;
+    margin-bottom: 7px;
+  }
+
+  &__control {
+    background: $white;
+    border: 1px solid $secondary-light;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Raleway, sans-serif;
+    width: 100%;
+    height: 36px;
+    padding-left: 10px;
+
+    &.error {
+      border: 1px solid $error;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.form-flex-row {
+  //display: flex;
+  //align-items: flex-end;
+  //justify-content: space-between;
+  min-height: 40px;
+  margin-bottom: 16px;
+
+  .form-select {
+    margin-right: 10px;
+    float: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form-error {
+  font-weight: 500;
+  font-size: 9px;
+  text-align: left;
+  line-height: normal;
+  color: $error;
+  margin-bottom: 15px;
+}
+
+.form-buttons {
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORM SELECT (select2)
+-------------------------------------------------------------------------------------------- */
+.form-select {
+  .select2-container--default .select2-selection--single {
+    height: 36px;
+  }
+
+  .select2.select2-container.select2-container--default {
+    width: 100% !important;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $label-color;
+    line-height: 33px;
+    text-align: left;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-top: 2px solid $secondary-lighten;
+    border-left: 2px solid $secondary-lighten;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(-135deg);
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow b
+
+  &--month,
+  &--month .select2.select2-container.select2-container--default {
+    min-width: 112px;
+    width: 42%;
+  }
+
+  &--day,
+  &--day .select2.select2-container.select2-container--default {
+    min-width: 52px;
+    width: 15%;
+  }
+
+  &--year,
+  &--year .select2.select2-container.select2-container--default {
+    min-width: 68px;
+    width: 40%;
+  }
+}
+
+/* FLEXBOX
+--------------------------------------------------------------------------*/
+.flex {
+  display: flex;
+}
+
+.flex,
+.flex-wrap {
+  &.col {
+    flex-direction: column;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+
+  &.space-around {
+    justify-content: space-around;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-baseline {
+    align-items: baseline;
+  }
+
+  &.align-stretch {
+    align-items: stretch;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* MEDIA QUERIES
+-------------------------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+  .form-flex-row {
+    flex-direction: column;
+
+    .form-select {
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      &--month,
+      &--month .select2.select2-container.select2-container--default,
+      &--day,
+      &--day .select2.select2-container.select2-container--default,
+      &--year,
+      &--year .select2.select2-container.select2-container--default {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+

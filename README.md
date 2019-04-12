@@ -1,11 +1,21 @@
-# Test-task-for-DiJust
+# dijust
 
-Please clone this project to your computer. 
+> A Vue.js project
 
-After you can get it on npm:
+## Build Setup
 
-$ npm install
+``` bash
+# install dependencies
+npm install
 
-$ npm run dev 
+# serve with hot reload at localhost:8080
+npm run dev
 
-To see result go to http://localhost:8080.
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
